@@ -141,13 +141,12 @@ namespace/pod/container
 
 ## How To Extend Parsing
 
-For small pattern changes, edit the parser constants in `main.py`:
+For small pattern changes, edit the parser rules in `main.py` and `utils.py`:
 
-- Add JSON field aliases in `LogAnalyzer.JSON_FIELDS`.
 - Add text identity patterns by extending `BRACKET_ID_RE`, `PREFIX_ID_RE`, or the key/value names accepted by `normalize_identity_key()` in `utils.py`.
 - Add crash, degraded, restart, or running keywords by updating the compiled regex constants in `utils.py`.
 
-For a new parser style later, create a new class that inherits from `BaseLogParser` and implements `parse_line()` with the same normalized event shape:
+For any custom `.log` format, add custom parser logic by creating a new class that inherits from `BaseLogParser`. The new parser only needs to implement `parse_line()` and return the same normalized event shape:
 
 ```python
 {
@@ -163,7 +162,7 @@ For a new parser style later, create a new class that inherits from `BaseLogPars
 }
 ```
 
-The existing processing flow can stay the same if the new parser returns this event structure.
+The existing processing flow can stay the same if the custom parser returns this event structure.
 
 ## Performance Notes
 
