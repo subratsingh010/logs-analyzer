@@ -1,0 +1,18 @@
+{
+  "payments/api-7d9c8/api": {
+    "cluster": "prod-east",
+    "namespace": "payments",
+    "pod": "api-7d9c8",
+    "pod_ip": "10.42.1.12",
+    "container": "api",
+    "node": "node-a",
+    "node_ip": "192.168.10.21",
+    "service": "checkout"
+  },
+  "orders/worker-55c/queue": {
+    "cluster": "prod-east",
+    "pod_ip": "10.42.2.18",
+    "node_ip": "192.168.10.22",
+    "service": "orders"
+  }
+}

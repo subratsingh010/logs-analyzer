@@ -1,0 +1,66 @@
+2026-05-21T08:00:00Z stdout F namespace=payments pod=api-7d9c8 pod_ip=10.42.1.12 container=api node=node-a node_ip=192.168.10.21 running load=1.2 cpu=35 mem=58
+2026-05-21T08:01:00Z stdout F namespace=payments pod=api-7d9c8 pod_ip=10.42.1.12 container=api node=node-a node_ip=192.168.10.21 cpu=82 mem=70 load=2.4
+2026-05-21T08:02:00Z stderr F namespace=payments pod=api-7d9c8 pod_ip=10.42.1.12 container=api node=node-a node_ip=192.168.10.21 fatal reason=OOMKilled
+2026-05-21T08:03:00Z stdout F namespace=payments pod=api-7d9c8 pod_ip=10.42.1.12 container=api node=node-a node_ip=192.168.10.21 restarted restart_count=2 load=0.8 cpu=20 mem=42
+{"timestamp":"2026-05-21T08:04:00Z","kubernetes":{"namespace_name":"orders","pod_name":"worker-55c","pod_ip":"10.42.2.18","container_name":"queue","host":"node-b","node_ip":"192.168.10.22","labels":{"app":"orders"}},"message":"readiness probe failed; degraded","metrics":{"cpu":88,"memory":76}}
+[default/web-6f8d:nginx@node-c] 2026-05-21T08:05:00Z healthy load=0.4 cpu=8 mem=20
+2026-05-21T08:06:00Z stdout F namespace=inventory pod=cache-0 pod_ip=10.42.3.10 container=redis node=node-c node_ip=192.168.10.23 running load=0.3 cpu=7 mem=18
+2026-05-21T08:07:00Z stdout F namespace=inventory pod=cache-0 pod_ip=10.42.3.10 container=redis node=node-c node_ip=192.168.10.23 healthy cpu=8 mem=19 load=0.4
+2026-05-21T08:08:00Z stdout F namespace=inventory pod=sync-849 pod_ip=10.42.3.21 container=worker node=node-d node_ip=192.168.10.24 started load=1.1 cpu=41 mem=52
+2026-05-21T08:09:00Z stderr F namespace=inventory pod=sync-849 pod_ip=10.42.3.21 container=worker node=node-d node_ip=192.168.10.24 timeout degraded cpu=91 mem=73
+2026-05-21T08:10:00Z stdout F namespace=inventory pod=sync-849 pod_ip=10.42.3.21 container=worker node=node-d node_ip=192.168.10.24 running load=1.5 cpu=54 mem=60
+{"timestamp":"2026-05-21T08:11:00Z","kubernetes":{"namespace_name":"auth","pod_name":"login-7b6","pod_ip":"10.42.4.11","container_name":"api","host":"node-a","node_ip":"192.168.10.21","labels":{"app":"auth"}},"message":"started listening","metrics":{"load":0.9,"cpu":31,"memory":44}}
+{"timestamp":"2026-05-21T08:12:00Z","kubernetes":{"namespace_name":"auth","pod_name":"login-7b6","pod_ip":"10.42.4.11","container_name":"api","host":"node-a","node_ip":"192.168.10.21","labels":{"app":"auth"}},"message":"healthy","metrics":{"load":1.0,"cpu":34,"memory":45}}
+{"timestamp":"2026-05-21T08:13:00Z","kubernetes":{"namespace_name":"auth","pod_name":"login-7b6","pod_ip":"10.42.4.11","container_name":"api","host":"node-a","node_ip":"192.168.10.21","labels":{"app":"auth"}},"message":"fatal reason=db_connection_lost","metrics":{"load":2.8,"cpu":89,"memory":78}}
+2026-05-21T08:14:00Z stdout F namespace=auth pod=login-7b6 pod_ip=10.42.4.11 container=api node=node-a node_ip=192.168.10.21 restarted restart_count=1 load=0.7 cpu=22 mem=40
+2026-05-21T08:15:00Z stdout F namespace=auth pod=session-55c pod_ip=10.42.4.12 container=api node=node-b node_ip=192.168.10.22 running load=0.8 cpu=25 mem=39
+2026-05-21T08:16:00Z stderr F namespace=auth pod=session-55c pod_ip=10.42.4.12 container=api node=node-b node_ip=192.168.10.22 liveness probe failed degraded cpu=77 mem=66
+2026-05-21T08:17:00Z stdout F namespace=auth pod=session-55c pod_ip=10.42.4.12 container=api node=node-b node_ip=192.168.10.22 healthy load=0.9 cpu=28 mem=41
+2026-05-21T08:18:00Z stdout F namespace=payments pod=settlement-64f pod_ip=10.42.1.31 container=worker node=node-d node_ip=192.168.10.24 started load=1.7 cpu=48 mem=63
+2026-05-21T08:19:00Z stdout F namespace=payments pod=settlement-64f pod_ip=10.42.1.31 container=worker node=node-d node_ip=192.168.10.24 running cpu=55 mem=68 load=2.1
+2026-05-21T08:20:00Z stderr F namespace=payments pod=settlement-64f pod_ip=10.42.1.31 container=worker node=node-d node_ip=192.168.10.24 panic reason=ledger_mismatch
+2026-05-21T08:21:00Z stdout F namespace=payments pod=settlement-64f pod_ip=10.42.1.31 container=worker node=node-d node_ip=192.168.10.24 restarted restart_count=3 load=1.0 cpu=35 mem=54
+2026-05-21T08:22:00Z stdout F namespace=payments pod=fraud-9aa pod_ip=10.42.1.41 container=scorer node=node-c node_ip=192.168.10.23 running load=1.4 cpu=46 mem=58
+2026-05-21T08:23:00Z stderr F namespace=payments pod=fraud-9aa pod_ip=10.42.1.41 container=scorer node=node-c node_ip=192.168.10.23 high latency degraded cpu=83 mem=71
+2026-05-21T08:24:00Z stdout F namespace=payments pod=fraud-9aa pod_ip=10.42.1.41 container=scorer node=node-c node_ip=192.168.10.23 running load=1.3 cpu=42 mem=56
+{"timestamp":"2026-05-21T08:25:00Z","namespace":"shipping","pod":"router-5d9","pod_ip":"10.42.5.10","container":"api","node":"node-e","node_ip":"192.168.10.25","service":"shipping","message":"running","cpu":21,"memory":35,"load":0.6}
+{"timestamp":"2026-05-21T08:26:00Z","namespace":"shipping","pod":"router-5d9","pod_ip":"10.42.5.10","container":"api","node":"node-e","node_ip":"192.168.10.25","service":"shipping","message":"healthy","cpu":24,"memory":36,"load":0.7}
+{"timestamp":"2026-05-21T08:27:00Z","namespace":"shipping","pod":"router-5d9","pod_ip":"10.42.5.10","container":"api","node":"node-e","node_ip":"192.168.10.25","service":"shipping","message":"backoff reason=upstream_503","cpu":65,"memory":59,"load":1.9}
+2026-05-21T08:28:00Z stdout F namespace=shipping pod=router-5d9 pod_ip=10.42.5.10 container=api node=node-e node_ip=192.168.10.25 restarted restart_count=2 load=0.8 cpu=27 mem=38
+2026-05-21T08:29:00Z stdout F namespace=shipping pod=packer-77d pod_ip=10.42.5.22 container=worker node=node-e node_ip=192.168.10.25 started load=0.9 cpu=33 mem=47
+2026-05-21T08:30:00Z stdout F namespace=shipping pod=packer-77d pod_ip=10.42.5.22 container=worker node=node-e node_ip=192.168.10.25 running load=1.2 cpu=39 mem=50
+2026-05-21T08:31:00Z stderr F namespace=shipping pod=packer-77d pod_ip=10.42.5.22 container=worker node=node-e node_ip=192.168.10.25 oomkilled reason=memory_limit
+2026-05-21T08:32:00Z stdout F namespace=shipping pod=packer-77d pod_ip=10.42.5.22 container=worker node=node-e node_ip=192.168.10.25 restarted restart_count=1 load=0.5 cpu=18 mem=31
+2026-05-21T08:33:00Z stdout F namespace=observability pod=collector-0 pod_ip=10.42.6.10 container=otel node=node-a node_ip=192.168.10.21 running load=0.5 cpu=14 mem=29
+2026-05-21T08:34:00Z stdout F namespace=observability pod=collector-0 pod_ip=10.42.6.10 container=otel node=node-a node_ip=192.168.10.21 healthy load=0.6 cpu=15 mem=30
+2026-05-21T08:35:00Z stderr F namespace=observability pod=collector-0 pod_ip=10.42.6.10 container=otel node=node-a node_ip=192.168.10.21 error rate degraded cpu=61 mem=52
+2026-05-21T08:36:00Z stdout F namespace=observability pod=collector-0 pod_ip=10.42.6.10 container=otel node=node-a node_ip=192.168.10.21 running load=0.7 cpu=19 mem=32
+{"timestamp":"2026-05-21T08:37:00Z","kubernetes":{"namespace_name":"search","pod_name":"indexer-0","pod_ip":"10.42.7.10","container_name":"indexer","host":"node-f","node_ip":"192.168.10.26","labels":{"app":"search"}},"message":"started","metrics":{"load":1.9,"cpu":58,"memory":69}}
+{"timestamp":"2026-05-21T08:38:00Z","kubernetes":{"namespace_name":"search","pod_name":"indexer-0","pod_ip":"10.42.7.10","container_name":"indexer","host":"node-f","node_ip":"192.168.10.26","labels":{"app":"search"}},"message":"running","metrics":{"load":2.2,"cpu":64,"memory":74}}
+{"timestamp":"2026-05-21T08:39:00Z","kubernetes":{"namespace_name":"search","pod_name":"indexer-0","pod_ip":"10.42.7.10","container_name":"indexer","host":"node-f","node_ip":"192.168.10.26","labels":{"app":"search"}},"message":"terminated reason=disk_pressure","metrics":{"load":3.1,"cpu":92,"memory":81}}
+2026-05-21T08:40:00Z stdout F namespace=search pod=indexer-0 pod_ip=10.42.7.10 container=indexer node=node-f node_ip=192.168.10.26 restarted restart_count=4 load=1.4 cpu=41 mem=62
+2026-05-21T08:41:00Z stdout F namespace=search pod=query-68c pod_ip=10.42.7.31 container=api node=node-f node_ip=192.168.10.26 running load=1.0 cpu=29 mem=45
+2026-05-21T08:42:00Z stdout F namespace=search pod=query-68c pod_ip=10.42.7.31 container=api node=node-f node_ip=192.168.10.26 ready load=1.1 cpu=31 mem=46
+2026-05-21T08:43:00Z stderr F namespace=search pod=query-68c pod_ip=10.42.7.31 container=api node=node-f node_ip=192.168.10.26 timeout degraded cpu=72 mem=60
+2026-05-21T08:44:00Z stdout F namespace=search pod=query-68c pod_ip=10.42.7.31 container=api node=node-f node_ip=192.168.10.26 running load=1.2 cpu=33 mem=47
+2026-05-21T08:45:00Z stdout F namespace=analytics pod=batch-20260521 pod_ip=10.42.8.10 container=job node=node-g node_ip=192.168.10.27 started load=2.0 cpu=70 mem=66
+2026-05-21T08:46:00Z stdout F namespace=analytics pod=batch-20260521 pod_ip=10.42.8.10 container=job node=node-g node_ip=192.168.10.27 running load=2.5 cpu=78 mem=73
+2026-05-21T08:47:00Z stderr F namespace=analytics pod=batch-20260521 pod_ip=10.42.8.10 container=job node=node-g node_ip=192.168.10.27 fatal reason=shuffle_failed
+2026-05-21T08:48:00Z stdout F namespace=analytics pod=batch-20260521 pod_ip=10.42.8.10 container=job node=node-g node_ip=192.168.10.27 restarted restart_count=1 load=1.1 cpu=37 mem=50
+{"timestamp":"2026-05-21T08:49:00Z","namespace":"analytics","pod":"stream-0","pod_ip":"10.42.8.25","container":"consumer","node":"node-g","node_ip":"192.168.10.27","service":"streaming","message":"running load=1.6 cpu=44 mem=57"}
+{"timestamp":"2026-05-21T08:50:00Z","namespace":"analytics","pod":"stream-0","pod_ip":"10.42.8.25","container":"consumer","node":"node-g","node_ip":"192.168.10.27","service":"streaming","message":"healthy load=1.5 cpu=42 mem=55"}
+{"timestamp":"2026-05-21T08:51:00Z","namespace":"analytics","pod":"stream-0","pod_ip":"10.42.8.25","container":"consumer","node":"node-g","node_ip":"192.168.10.27","service":"streaming","message":"panic reason=offset_corruption","metrics":{"cpu":86,"memory":79,"load":2.7}}
+2026-05-21T08:52:00Z stdout F namespace=analytics pod=stream-0 pod_ip=10.42.8.25 container=consumer node=node-g node_ip=192.168.10.27 restarted restart_count=2 load=1.0 cpu=34 mem=49
+2026-05-21T08:53:00Z stdout F namespace=crm pod=api-6b8 pod_ip=10.42.9.11 container=api node=node-h node_ip=192.168.10.28 running load=0.9 cpu=26 mem=38
+2026-05-21T08:54:00Z stderr F namespace=crm pod=api-6b8 pod_ip=10.42.9.11 container=api node=node-h node_ip=192.168.10.28 readiness probe failed degraded cpu=69 mem=54
+2026-05-21T08:55:00Z stdout F namespace=crm pod=api-6b8 pod_ip=10.42.9.11 container=api node=node-h node_ip=192.168.10.28 healthy load=0.8 cpu=22 mem=37
+2026-05-21T08:56:00Z stdout F namespace=crm pod=worker-799 pod_ip=10.42.9.31 container=worker node=node-h node_ip=192.168.10.28 started load=1.3 cpu=43 mem=51
+2026-05-21T08:57:00Z stdout F namespace=crm pod=worker-799 pod_ip=10.42.9.31 container=worker node=node-h node_ip=192.168.10.28 running load=1.8 cpu=57 mem=64
+2026-05-21T08:58:00Z stderr F namespace=crm pod=worker-799 pod_ip=10.42.9.31 container=worker node=node-h node_ip=192.168.10.28 crash reason=queue_poisoned
+2026-05-21T08:59:00Z stdout F namespace=crm pod=worker-799 pod_ip=10.42.9.31 container=worker node=node-h node_ip=192.168.10.28 restarted restart_count=5 load=1.0 cpu=29 mem=43
+2026-05-21T09:00:00Z stdout F namespace=default pod=web-6f8d pod_ip=10.42.0.19 container=nginx node=node-c node_ip=192.168.10.23 running load=0.5 cpu=10 mem=22
+2026-05-21T09:01:00Z stdout F namespace=default pod=web-6f8d pod_ip=10.42.0.19 container=nginx node=node-c node_ip=192.168.10.23 healthy load=0.4 cpu=9 mem=20
+2026-05-21T09:02:00Z stderr F namespace=default pod=web-6f8d pod_ip=10.42.0.19 container=nginx node=node-c node_ip=192.168.10.23 crash reason=config_reload_failed
+2026-05-21T09:03:00Z stdout F namespace=default pod=web-6f8d pod_ip=10.42.0.19 container=nginx node=node-c node_ip=192.168.10.23 restarted restart_count=1 load=0.3 cpu=8 mem=18
+2026-05-21T09:04:00Z stdout F namespace=ml pod=trainer-0 pod_ip=10.42.10.10 container=trainer node=node-i node_ip=192.168.10.29 started load=3.4 cpu=89 mem=84
+2026-05-21T09:05:00Z stderr F namespace=ml pod=trainer-0 pod_ip=10.42.10.10 container=trainer node=node-i node_ip=192.168.10.29 memory pressure degraded cpu=94 mem=92
