@@ -148,6 +148,8 @@ For small pattern changes, edit the parser rules in `main.py` and `utils.py`:
 
 For any custom `.log` format, add custom parser logic by creating a new class that inherits from `BaseLogParser`. The new parser only needs to implement `parse_line()` and return the same normalized event shape:
 
+`parse_line()` is the main extension method. It receives one log line and the line number, then returns a normalized event dictionary. If the line is not useful, it should return `None`.
+
 ```python
 {
     "key": "namespace/pod/container",
